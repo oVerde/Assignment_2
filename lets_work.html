@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>.atoJ | Contact</title>
+    <link rel="stylesheet" href="https://use.typekit.net/tqj8kzx.css" />
+    <link rel="stylesheet" href="css/shared.css" />
+    <link rel="stylesheet" href="css/email.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="index.html">
+          <img src="imgs/logo.webp" alt="Logo" />
+        </a>
+      </div>
+
+      <nav class="nav-left">
+        <a href="projetos.html">My Work</a>
+        <a href="#social-media">Social Media</a>
+        <a href="#about-me">About Me</a>
+      </nav>
+
+      <div class="nav-right">
+        <a href="lets_work.html" class="active">→ Let’s Work</a>
+      </div>
+
+      <!-- Botão hamburguer -->
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- Menu mobile full screen -->
+      <div class="mobile-menu">
+        <nav>
+          <a href="projetos.html">My Work</a>
+          <a href="#social-media">Social Media</a>
+          <a href="#about-me">About Me</a>
+          <a href="lets_work.html">→ Let’s Work</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container">
+      <h1>CONTACT</h1>
+      <div class="contact-wrapper">
+        <div class="contact-section contact-info">
+          <h2>Info</h2>
+          <div>
+            Email: <a href="mailto:contact@studio.com">contact@studio.com</a>
+          </div>
+          <div>Phone: <a href="tel:+48762864075">(+48) 762 864 075</a></div>
+          <div>Office hours: Monday - Friday, 11 AM - 2 PM</div>
+          <div>Location: Manhattan, New York</div>
+        </div>
+
+        <form
+          class="contact-section contact-form"
+          action="mailto:teuemail@exemplo.com"
+          method="POST"
+          enctype="text/plain"
+        >
+          <h2>Form</h2>
+          <div class="row">
+            <input type="text" name="nome" placeholder="Nome" required />
+            <input type="text" name="apelido" placeholder="Apelido" required />
+          </div>
+          <input type="email" name="email" placeholder="Email" required />
+          <select name="service">
+            <option value="">Service</option>
+            <option value="branding">Branding</option>
+            <option value="web">Web Design</option>
+            <option value="video">Video</option>
+          </select>
+          <textarea name="conteudo" placeholder="Mensagem" required></textarea>
+
+          <label class="checkbox-wrapper">
+            <input type="checkbox" name="updates" />
+            Receive updates
+          </label>
+
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
+    <script src="js/txtanim.js"></script>
+    <script src="js/header.js"></script>
+  </body>
+</html>

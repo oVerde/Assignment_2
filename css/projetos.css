@@ -7,17 +7,12 @@
 
 html,
 body {
-  height: 100%;
   overflow-x: hidden;
   background-color: white;
 }
 
 body::-webkit-scrollbar {
   display: none;
-}
-
-header {
-  mix-blend-mode: difference;
 }
 
 .container {
@@ -113,7 +108,7 @@ h1 {
   overflow: hidden;
   pointer-events: none;
   opacity: 0;
-  z-index: 1000;
+  z-index: 1;
   transition: opacity 0.5s ease;
 }
 
@@ -137,9 +132,11 @@ h1 {
   filter: blur(0);
 }
 
-
 @media (max-width: 768px) {
   .preview-box {
     display: none;
+  }
+  h1 {
+    font-size: 15vw;
   }
 }
