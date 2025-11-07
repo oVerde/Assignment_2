@@ -1,0 +1,104 @@
+:root {
+  --black: #090909;
+  --white: #e7e7db;
+  --secondary: rgb(0, 255, 64);
+
+  --font-base: urbane, sans-serif;
+  --font-titulo: "futura-100", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6rem;
+  pointer-events: auto;
+  font-family: var(--font-base);
+  font-size: 1.4rem;
+}
+
+.logo img {
+  width: 4rem;
+  height: auto;
+  transition: 0.3s;
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+}
+
+.nav-left {
+  display: flex;
+  gap: 2.5rem;
+  margin-left: 30rem;
+}
+
+.nav-left a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.3s;
+}
+
+.nav-right a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-left a:hover {
+  color: var(--secondary);
+}
+
+.nav-right a:hover {
+  color: var(--secondary);
+  transform: scale(1.3) ease;
+}
+
+.nav-left a {
+  position: relative;
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.3s;
+  pointer-events: auto;
+}
+
+.nav-left a::before,
+.nav-right a::before {
+  content: "→";
+  position: absolute;
+  left: -1.5rem;
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  font-size: 1.2rem;
+}
+
+.nav-left a:hover::before {
+  transform: translateY(-50%) scale(1);
+  opacity: 1;
+}
+
+.nav-left a.active {
+  pointer-events: none;
+  color: var(--secondary);
+}
+
+.nav-left a.active::before {
+  transform: translateY(-50%) scale(1);
+  opacity: 1;
+}
