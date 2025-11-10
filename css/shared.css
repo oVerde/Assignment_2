@@ -2,7 +2,6 @@
   --black: #090909;
   --white: #e7e7db;
   --secondary: rgb(32, 185, 70);
-
   --font-base: urbane, sans-serif;
   --font-titulo: "futura-100", sans-serif;
 }
@@ -28,7 +27,6 @@ h2 {
   font-family: var(--font-titulo);
 }
 
-/* Header desktop */
 header {
   position: fixed;
   top: 0;
@@ -42,20 +40,17 @@ header {
   z-index: 2;
   font-family: var(--font-base);
   font-size: 1.4rem;
-  /* Removemos o mix-blend-mode daqui */
 }
 
-/* Apenas o logo com difference */
 .logo img {
   width: 4rem;
   transition: 0.3s;
-  filter: invert(1); /* inverte a cor do logo para branco em fundo preto */
+  filter: invert(1);
 }
 .logo img:hover {
   transform: scale(1.1);
 }
 
-/* Links desktop */
 .nav-left,
 .nav-right {
   display: flex;
@@ -93,7 +88,6 @@ header {
   transition: transform 0.3s ease, opacity 0.3s ease;
   color: var(--secondary);
 }
-
 .nav-left a:hover::before,
 .nav-right a:hover::before {
   transform: translateY(-50%) scale(1);
@@ -107,7 +101,6 @@ header {
   cursor: pointer;
   z-index: 4;
 }
-
 .hamburger span {
   width: 2rem;
   height: 0.2rem;
@@ -115,40 +108,33 @@ header {
   border-radius: 25%;
   transition: all 0.4s ease;
 }
-
 .hamburger:hover span {
   background-color: var(--secondary);
 }
-
-/* Hamburger transformado em X */
 .hamburger.open span:nth-child(1) {
   transform: rotate(45deg) translate(8px, 8px);
 }
-
 .hamburger.open span:nth-child(2) {
   opacity: 0;
 }
-
 .hamburger.open span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Menu mobile full screen */
 .mobile-menu {
-  z-index: 2; /* maior que o header para ficar acima */
+  z-index: 2;
   display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(9, 9, 9, 0.85); /* semi-transparente */
-  backdrop-filter: blur(10px); /* efeito de blur */
+  background-color: rgba(9, 9, 9, 0.85);
+  backdrop-filter: blur(10px);
   padding: 6rem 3rem;
   flex-direction: column;
   gap: 2rem;
 }
-
 .mobile-menu nav {
   display: flex;
   flex-direction: column;
@@ -164,7 +150,6 @@ header {
   color: var(--secondary);
 }
 
-/* RESPONSIVO */
 @media screen and (max-width: 1524px) {
   .nav-left,
   .nav-right {

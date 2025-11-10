@@ -1,17 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
-  function animateTextElements(
-    selector,
-    delayBetweenElements = 100,
-    delayPerChar = 20
-  ) {
+  function animateTextElements(selector, delayBetweenElements = 100, delayPerChar = 20) {
     const elements = document.querySelectorAll(selector);
 
     elements.forEach((el, index) => {
-      // Se for label de checkbox, só animar o texto
-      let textEl =
-        el.tagName.toLowerCase() === "label" && el.querySelector("input")
-          ? el.cloneNode(false)
-          : el;
+      let textEl = el.tagName.toLowerCase() === "label" && el.querySelector("input")
+        ? el.cloneNode(false)
+        : el;
 
       let textContent = textEl.textContent.trim();
       if (!textContent) return;
@@ -28,10 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         textEl.appendChild(span);
       });
 
-      // Se for label com input, não bloquear o input
-      if (
-        !(el.tagName.toLowerCase() === "label" && el.querySelector("input"))
-      ) {
+      if (!(el.tagName.toLowerCase() === "label" && el.querySelector("input"))) {
         el.style.pointerEvents = "none";
       }
 
@@ -44,9 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }, charIndex * delayPerChar);
         });
 
-        if (
-          !(el.tagName.toLowerCase() === "label" && el.querySelector("input"))
-        ) {
+        if (!(el.tagName.toLowerCase() === "label" && el.querySelector("input"))) {
           setTimeout(() => {
             el.style.pointerEvents = "auto";
           }, chars.length * delayPerChar);
@@ -55,12 +44,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Aplica animação aos elementos do teu HTML
-  animateTextElements(".container h1"); // título principal
-  animateTextElements(".contact-section h2"); // subtítulos "Info" e "Form"
-  animateTextElements(".contact-info div"); // linhas da info
-  animateTextElements(".contact-form input"); // inputs
-  animateTextElements(".contact-form textarea"); // textarea
-  animateTextElements(".checkbox-wrapper label"); // só o texto da label
-  animateTextElements(".contact-form button"); // botão
+  animateTextElements(".container h1");
+  animateTextElements(".contact-section h2");
+  animateTextElements(".contact-info div");
+  animateTextElements(".contact-form input");
+  animateTextElements(".contact-form textarea");
+  animateTextElements(".checkbox-wrapper label");
+  animateTextElements(".contact-form button");
 });

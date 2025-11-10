@@ -109,12 +109,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 200);
 });
 
-window.addEventListener("pageshow", (event) => {
-  if (event.persisted) {
-    location.reload();
-  }
-});
-
 document.addEventListener("DOMContentLoaded", () => {
   const links = document.querySelectorAll(".lista a");
   const previewBox = document.getElementById("previewBox");
@@ -204,65 +198,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     titulo.classList.add("visible");
   }, 200);
-
-  const pageOverlay = document.createElement("div");
-  pageOverlay.id = "pageOverlay";
-  Object.assign(pageOverlay.style, {
-    position: "fixed",
-    inset: "0",
-    backgroundColor: "#090909",
-    zIndex: "999999",
-    pointerEvents: "none",
-    opacity: "0",
-    clipPath: "circle(0% at 50% 50%)",
-    willChange: "clip-path, opacity",
-  });
-  document.body.appendChild(pageOverlay);
-
-  links.forEach((link) => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      const href = link.getAttribute("href");
-
-      const mouseX = e.clientX;
-      const mouseY = e.clientY;
-
-      const distTopLeft = Math.hypot(mouseX, mouseY);
-      const distTopRight = Math.hypot(window.innerWidth - mouseX, mouseY);
-      const distBottomLeft = Math.hypot(mouseX, window.innerHeight - mouseY);
-      const distBottomRight = Math.hypot(
-        window.innerWidth - mouseX,
-        window.innerHeight - mouseY
-      );
-      const maxRadius = Math.max(
-        distTopLeft,
-        distTopRight,
-        distBottomLeft,
-        distBottomRight
-      );
-
-      pageOverlay.style.pointerEvents = "auto";
-      pageOverlay.style.clipPath = `circle(0px at ${mouseX}px ${mouseY}px)`;
-      pageOverlay.style.opacity = "1";
-
-      gsap.to(pageOverlay, {
-        clipPath: `circle(${maxRadius}px at ${mouseX}px ${mouseY}px)`,
-        duration: 0.6,
-        ease: "power2.inOut",
-        onComplete: () => {
-          window.location.href = href;
-        },
-      });
-    });
-  });
-
-  window.addEventListener("pageshow", () => {
-    gsap.set(pageOverlay, {
-      opacity: 0,
-      pointerEvents: "none",
-      clipPath: "circle(0% at 50% 50%)",
-    });
-  });
 });
 
 links.forEach((link) => {
@@ -301,35 +236,5 @@ links.forEach((link) => {
     previewImg.style.transform = "scale(1.2)";
     previewImg.style.filter = "blur(10px)";
     clearTimeout(fadeTimeout);
-  });
-});
-
-const projectLinks = document.querySelectorAll(".lista a");
-
-const infoBox = document.createElement("div");
-infoBox.classList.add("project-info");
-document.body.appendChild(infoBox);
-
-projectLinks.forEach((link) => {
-  link.addEventListener("mouseenter", (e) => {
-    const summary = link.getAttribute("data-summary");
-    const year = link.getAttribute("data-year");
-    const collaborators = link.getAttribute("data-collaborators");
-
-    infoBox.innerHTML = `
-      <div class="summary">${summary}</div>
-      <div class="year">${year}</div>
-      <div class="collaborators">${collaborators}</div>
-    `;
-
-    const rect = link.getBoundingClientRect();
-    infoBox.style.top = rect.bottom + window.scrollY + 8 + "px";
-    infoBox.style.left = rect.left + window.scrollX + "px";
-
-    infoBox.classList.add("show");
-  });
-
-  link.addEventListener("mouseleave", () => {
-    infoBox.classList.remove("show");
   });
 });
