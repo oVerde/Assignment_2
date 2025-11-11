@@ -1,6 +1,3 @@
-// js/spotify.js
-
-// Authorization token (tem de ser atualizado periodicamente)
 const token = 'BQCCPkf0iEty7X7X2rzemlkjgUhM-M9aRVuR4k4Ve2UxB7ycIzOL982Byt6yzFWLyn4YWrkubbTa9RMHmQimmcEIK7bhawvoHM7IW0wsSGdzXUQhXTfBhB6YIgv75HA9nKH4DK1ZCCxqxLohaOk42lAW3X7aaqSo0GoCP1kb31qEt_SrUgxeUUFFff2NuUuwv2Y8hWXNiojt5Nl4VgUNcxYYH_kUOPuMEl2bIzWziPeCNfCo1KEFYo76OlOzYHMbM21VMaAjSU-s9LLdtJN7zTEwK9EynxWzND0mWDtQs_k4ep8sAHv8djipUTcQEVYT5WPU';
 
 async function fetchWebApi(endpoint, method = 'GET', body = null) {
@@ -37,7 +34,6 @@ function renderTopTracks(tracks) {
   });
 }
 
-// Inicialização
 (async () => {
   try {
     const topTracks = await getTopTracks();

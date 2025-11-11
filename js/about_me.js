@@ -1,32 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
   function setupFragmentSwitch(section) {
-    const lennyVideo = section.querySelector(".lenny-video");
-    const paparazziVideos = section.querySelectorAll(".paparazzi-video");
+    const bvideo = section.querySelector(".bvideo");
     const revealText = section.querySelector(".reveal-text");
     const shakeText = section.querySelector(".shake-text");
     const closeText = section.querySelector(".close-text");
 
-    let paparazziIndex = 0;
-    let isHidden = false;
-    lennyVideo.classList.add("active");
+    let isHidden = true; // começa escondido
+    shakeText.classList.add("hidden"); // texto escondido por default
+    bvideo.classList.remove("blur"); // sem blur inicialmente
 
-    // Função para aplicar blur quando o popup estiver aberto
     function updateBlur() {
       if (!isHidden) {
-        lennyVideo.classList.add("blur");
+        // texto visível -> aplicar blur
+        bvideo.classList.add("blur");
       } else {
-        lennyVideo.classList.remove("blur");
+        // texto escondido -> remover blur
+        bvideo.classList.remove("blur");
       }
     }
 
-    // Fechar a caixa de texto
+    // Fechar o texto
     closeText.addEventListener("click", () => {
       shakeText.classList.add("hidden");
       isHidden = true;
       updateBlur();
     });
 
-    // Revelar a caixa de texto
+    // Reabrir o texto
     revealText.addEventListener("click", (e) => {
       e.preventDefault();
       shakeText.classList.remove("hidden");
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
       updateBlur();
     });
 
-    // Shake-to-hide detection
+    // Fechar o texto ao "sacudir" com o mouse
     let lastTime = 0;
     let lastX = 0;
     let lastY = 0;
@@ -67,7 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Inicializar todas as secções
   const sections = document.querySelectorAll(".fragment-switch");
   sections.forEach((section) => setupFragmentSwitch(section));
 });
