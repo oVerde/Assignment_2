@@ -8,6 +8,7 @@ body {
     font-family: var(--font-base);
     font-weight: 100;
     background-color: var(--white);
+    color: var(--secondary);
 }
 
 @keyframes fadeSlideUp {

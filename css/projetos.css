@@ -8,7 +8,6 @@
 html,
 body {
   overflow-x: hidden;
-  background-color: white;
 }
 
 body::-webkit-scrollbar {
@@ -30,6 +29,7 @@ h1 {
   margin: 0 0 5px 1.2rem;
   font-family: var(--font-base);
   font-weight: 700;
+  color: var(--secondary);
   font-size: 8rem;
 }
 
@@ -58,7 +58,7 @@ h1 {
   padding: 27px 20px;
   color: var(--black);
   text-decoration: none;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--neutral2);
   box-sizing: border-box;
   transition: background 0.5s, color 0.5s;
   opacity: 0;
@@ -95,15 +95,15 @@ h1 {
 
 .seta {
   font-size: 14px;
-  color: #666;
+  color: var(--black);
 }
 
 .preview-box {
   position: absolute;
   width: 28vw;
   height: 34vh;
-  background: var(--white);
-  border: 5px solid var(--black);
+  background: var(--black);
+  border: 5px solid var(--secondary);
   border-radius: 2px;
   overflow: hidden;
   pointer-events: none;

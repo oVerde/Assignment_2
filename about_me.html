@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>.atoJ | About Me</title>
+    <link rel="stylesheet" href="css/shared.css" />
+    <link rel="stylesheet" href="css/about_me.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/tqj8kzx.css" />
+  </head>
+  <body>
+    <main class="snap-container">
+      <header>
+        <div class="logo">
+          <a href="index.html"> <img src="imgs/logo.webp" alt="Logo" /> </a>
+        </div>
+        <nav class="nav-left">
+          <a href="projetos.html">My Work</a>
+          <a href="curriculum.html">Curriculum</a>
+          <a href="about_me.html" class="active">About Me</a>
+        </nav>
+        <div class="nav-right"><a href="lets_work.html">→ Let’s Work</a></div>
+        <div class="hamburger"><span></span> <span></span> <span></span></div>
+        <div class="mobile-menu">
+          <nav>
+            <a href="projetos.html">My Work</a>
+            <a href="curriculo.html" class="active">Curriculum</a>
+            <a href="about_me.html" class="active">About Me</a>
+            <a href="lets_work.html">→ Let’s Work</a>
+          </nav>
+        </div>
+      </header>
+      <section class="center-content snap-section fragment-switch">
+        <a href="#" class="reveal-text">More about <u>.atoJ design</u></a>
+        <div class="fragment-header shake-text">
+          <button class="close-btn close-text" aria-label="Close">×</button>
+          <h2>About Me</h2>
+          <p>
+            Hi! I’m João Verde, a multidisciplinary designer passionate about
+            creating unique identities and stories for my projects. I enjoy
+            exploring different areas of design, always aiming to bring ideas
+            and concepts to life in a creative and impactful way. Outside of
+            work, I’m into sports, love playing video games, and enjoy watching
+            movies and series, all of which help enrich my pop culture
+            knowledge and inspire my creativity.
+          </p>
+        </div>
+
+        <div class="background-videos">
+          <video class="bg-video lenny-video" autoplay muted loop>
+            <source src="video/bg_video-byGAWX.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </section>
+
+      <div id="spotify-widget">
+        <h1>Top Listened</h1>
+        <div id="track-container">
+          <div>Carregando músicas...</div>
+          <div>Carregando artistas...</div>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/about_me.js"></script>
+    <script src="js/spotify.js"></script>
+  </body>
+</html>

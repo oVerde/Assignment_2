@@ -3,6 +3,7 @@ html {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  color: var(--secondary);
 }
 
 .container {
@@ -66,6 +67,7 @@ h1 {
 .contact-form textarea,
 .contact-form select {
     font-family: var(--font-base);
+    color: var(--secondary);
   width: 100%;
   padding: 1rem 0;
   font-size: 1rem;
